@@ -21,6 +21,7 @@ Requires:	php-pear-HTTP_Request2
 Requires:	php-pear-PEAR-core >= 1:1.4.0
 Requires:	php-simplexml
 Suggests:	php-pear-HTTP_OAuth
+Obsoletes:	php-pear-Services_Twitter-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,20 +40,6 @@ Pozwala na wysyłanie aktualizacji statusów, pobieranie informacji,
 dodawanie znajomych, itp.
 
 Ta klasa ma w PEAR status: %{_status}.
-
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
@@ -76,7 +63,3 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/Services/Twitter
 
 %{php_pear_dir}/data/%{_pearname}
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/Services_Twitter
