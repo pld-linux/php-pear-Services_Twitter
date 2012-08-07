@@ -1,11 +1,11 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		beta
 %define		_pearname	Services_Twitter
+%include	/usr/lib/rpm/macros.php
 Summary:	%{_pearname} - PHP interface to Twitter's API
 Summary(pl.UTF-8):	%{_pearname} - interfejs PHP do API serwisu Twitter
 Name:		php-pear-%{_pearname}
 Version:	0.6.3
-Release:	2
+Release:	3
 License:	BSD
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -14,12 +14,12 @@ URL:		http://pear.php.net/package/Services_Twitter/
 BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.571
-Requires:	php-json
-Requires:	php-mbstring
+Requires:	php(json)
+Requires:	php(mbstring)
+Requires:	php(simplexml)
 Requires:	php-pear
 Requires:	php-pear-HTTP_Request2
 Requires:	php-pear-PEAR-core >= 1:1.4.0
-Requires:	php-simplexml
 Suggests:	php-pear-HTTP_OAuth
 Obsoletes:	php-pear-Services_Twitter-tests
 BuildArch:	noarch
